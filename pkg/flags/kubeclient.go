@@ -84,7 +84,8 @@ func (k *KubeClientConfig) NewClientSetConfig() (*rest.Config, error) {
 
 	csconfig.QPS = float32(k.KubeAPIQPS)
 	csconfig.Burst = k.KubeAPIBurst
-
+	csconfig.ContentType = "application/json"
+	csconfig.AcceptContentTypes = "application/json"
 	return csconfig, nil
 }
 
